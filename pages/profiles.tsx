@@ -45,7 +45,7 @@ const Profiles = () => {
                  group-hover:border-white
                  overflow-hidden'
               >
-                <img src='/images/default-red.png' alt=''></img>
+                <img src='/images/default-red.png' alt='' />
               </div>
 
               <div
