@@ -15,7 +15,7 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }) => {
   const { data: currentUser, mutate } = useCurrentUser();
 
   const isFavorite = useMemo(() => {
-    const list = currentUser?.favoriteIds || [];
+    const list = currentUser?.favoriteMoviesIds || [];
 
     return list.includes(movieId);
   }, [currentUser, movieId]);
@@ -25,15 +25,16 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }) => {
 
     if (isFavorite) {
       response = await axios.delete('/api/favorite', { data: { movieId } });
-    } else {
+    }
+    else {
       response = await axios.post('/api/favorite', { movieId });
     }
 
-    const updatedFavoriteIds = response?.data?.favoriteIds;
+    const updatedFavoriteMoviesIds = response?.data?.favoriteMoviesIds;
 
     mutate({ 
       ...currentUser, 
-      favoriteIds: updatedFavoriteIds,
+      favoriteMoviesIds: updatedFavoriteMoviesIds,
     });
     mutateFavorites();
   }, [movieId, isFavorite, currentUser, mutate, mutateFavorites]);
