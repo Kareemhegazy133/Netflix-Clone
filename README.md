@@ -5,6 +5,7 @@
 This is a repository for a Netflix Clone website using React, NextJS, TailwindCSS & Prisma.
 
 ### Demo
+Click on the picture to watch the demo video or click here: https://youtu.be/xXovkbim1fI
 
 [![IMAGE ALT TEXT](https://github.com/Kareemhegazy133/Netflix-Clone/blob/main/public/AppPreviewVideoDemoPicture.jpeg)](https://youtu.be/xXovkbim1fI "Demo Video")
 
